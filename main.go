@@ -17,7 +17,7 @@ func main() {
 	for _, opt := range []func(*descriptor.FileDescriptorProto){
 		vanity.SetBoolFileOption(gogoproto.E_GoprotoGettersAll, true),
 		vanity.SetBoolFileOption(gogoproto.E_GoprotoEnumPrefixAll, true),
-		vanity.SetBoolFileOption(gogoproto.E_GoprotoStringerAll, false),
+		vanity.SetBoolFileOption(gogoproto.E_GoprotoStringerAll, true),
 		vanity.SetBoolFileOption(gogoproto.E_VerboseEqualAll, true),
 		vanity.SetBoolFileOption(gogoproto.E_FaceAll, false),
 		vanity.SetBoolFileOption(gogoproto.E_GostringAll, true),
