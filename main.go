@@ -3,6 +3,7 @@
 package main
 
 import (
+	"github.com/gogo/protobuf/gogoproto"
 	"github.com/gogo/protobuf/protoc-gen-gogo/descriptor"
 	"github.com/gogo/protobuf/vanity"
 	"github.com/gogo/protobuf/vanity/command"
@@ -14,30 +15,35 @@ func main() {
 	files = vanity.FilterFiles(files, vanity.NotGoogleProtobufDescriptorProto)
 
 	for _, opt := range []func(*descriptor.FileDescriptorProto){
-		//vanity.TurnOffGoGettersAll,
-		//vanity.TurnOffGoEnumPrefixAll,
-		vanity.TurnOffGoStringerAll,
-		vanity.TurnOnVerboseEqualAll,
-		//vanity.TurnOnFaceAll,
-		//vanity.TurnOnGoStringAll,
-		vanity.TurnOnPopulateAll,
-		vanity.TurnOnStringerAll,
-		vanity.TurnOnEqualAll,
-		//vanity.TurnOnDescriptionAll,
-		vanity.TurnOnTestGenAll,
-		vanity.TurnOnBenchGenAll,
-		vanity.TurnOnMarshalerAll,
-		vanity.TurnOnUnmarshalerAll,
-		//vanity.TurnOnStable_MarshalerAll,
-		vanity.TurnOnSizerAll,
-		//vanity.TurnOffGoEnumStringerAll,
-		//vanity.TurnOnEnumStringerAll,
-		//vanity.TurnOnUnsafeUnmarshalerAll,
-		//vanity.TurnOnUnsafeMarshalerAll,
-		//vanity.TurnOffGoExtensionsMapAll,
-		vanity.TurnOffGoUnrecognizedAll,
-		//vanity.TurnOffGogoImport,
-		 //vanity.TurnOnCompareAll,
+		vanity.SetBoolFileOption(gogoproto.E_GoprotoGettersAll, true),
+		vanity.SetBoolFileOption(gogoproto.E_GoprotoEnumPrefixAll, true),
+		vanity.SetBoolFileOption(gogoproto.E_GoprotoStringerAll, false),
+		vanity.SetBoolFileOption(gogoproto.E_VerboseEqualAll, true),
+		vanity.SetBoolFileOption(gogoproto.E_FaceAll, false),
+		vanity.SetBoolFileOption(gogoproto.E_GostringAll, false),
+		vanity.SetBoolFileOption(gogoproto.E_PopulateAll, true),
+		vanity.SetBoolFileOption(gogoproto.E_StringerAll, true),
+		vanity.SetBoolFileOption(gogoproto.E_OnlyoneAll, false),
+		vanity.SetBoolFileOption(gogoproto.E_EqualAll, true),
+		vanity.SetBoolFileOption(gogoproto.E_DescriptionAll, false),
+		vanity.SetBoolFileOption(gogoproto.E_TestgenAll, true),
+		vanity.SetBoolFileOption(gogoproto.E_BenchgenAll, true),
+		vanity.SetBoolFileOption(gogoproto.E_MarshalerAll, true),
+		vanity.SetBoolFileOption(gogoproto.E_UnmarshalerAll, true),
+		vanity.SetBoolFileOption(gogoproto.E_StableMarshalerAll, false),
+		vanity.SetBoolFileOption(gogoproto.E_SizerAll, true),
+		vanity.SetBoolFileOption(gogoproto.E_GoprotoEnumStringerAll, true),
+		vanity.SetBoolFileOption(gogoproto.E_EnumStringerAll, false),
+		vanity.SetBoolFileOption(gogoproto.E_UnsafeMarshalerAll, false),
+		vanity.SetBoolFileOption(gogoproto.E_UnsafeUnmarshalerAll, false),
+		vanity.SetBoolFileOption(gogoproto.E_GoprotoExtensionsMapAll, true),
+		vanity.SetBoolFileOption(gogoproto.E_GoprotoUnrecognizedAll, false),
+		vanity.SetBoolFileOption(gogoproto.E_GogoprotoImport, true),
+		vanity.SetBoolFileOption(gogoproto.E_ProtosizerAll, false),
+		vanity.SetBoolFileOption(gogoproto.E_CompareAll, false),
+		vanity.SetBoolFileOption(gogoproto.E_TypedeclAll, true),
+		vanity.SetBoolFileOption(gogoproto.E_EnumdeclAll, true),
+		vanity.SetBoolFileOption(gogoproto.E_GoprotoRegistration, true),
 	} {
 		vanity.ForEachFile(files, opt)
 	}
