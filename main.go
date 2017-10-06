@@ -20,7 +20,7 @@ func main() {
 		vanity.SetBoolFileOption(gogoproto.E_GoprotoStringerAll, true),
 		vanity.SetBoolFileOption(gogoproto.E_VerboseEqualAll, true),
 		vanity.SetBoolFileOption(gogoproto.E_FaceAll, false),
-		vanity.SetBoolFileOption(gogoproto.E_GostringAll, true),
+		vanity.SetBoolFileOption(gogoproto.E_GostringAll, false),
 		vanity.SetBoolFileOption(gogoproto.E_PopulateAll, true),
 		vanity.SetBoolFileOption(gogoproto.E_StringerAll, false),
 		vanity.SetBoolFileOption(gogoproto.E_OnlyoneAll, false),
