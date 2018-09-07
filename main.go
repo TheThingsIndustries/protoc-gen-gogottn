@@ -15,14 +15,14 @@ func main() {
 	files = vanity.FilterFiles(files, vanity.NotGoogleProtobufDescriptorProto)
 
 	for _, opt := range []func(*descriptor.FileDescriptorProto){
-		vanity.SetBoolFileOption(gogoproto.E_BenchgenAll, true),
+		vanity.SetBoolFileOption(gogoproto.E_BenchgenAll, false),
 		vanity.SetBoolFileOption(gogoproto.E_CompareAll, false),
 		vanity.SetBoolFileOption(gogoproto.E_DescriptionAll, false),
 		vanity.SetBoolFileOption(gogoproto.E_EnumStringerAll, true),
 		vanity.SetBoolFileOption(gogoproto.E_EnumdeclAll, true),
 		vanity.SetBoolFileOption(gogoproto.E_EqualAll, true),
 		vanity.SetBoolFileOption(gogoproto.E_FaceAll, false),
-		vanity.SetBoolFileOption(gogoproto.E_GogoprotoImport, true),
+		vanity.SetBoolFileOption(gogoproto.E_GogoprotoImport, false),
 		vanity.SetBoolFileOption(gogoproto.E_GoprotoEnumPrefixAll, true),
 		vanity.SetBoolFileOption(gogoproto.E_GoprotoEnumStringerAll, false),
 		vanity.SetBoolFileOption(gogoproto.E_GoprotoExtensionsMapAll, true),
@@ -43,7 +43,7 @@ func main() {
 		vanity.SetBoolFileOption(gogoproto.E_UnmarshalerAll, true),
 		vanity.SetBoolFileOption(gogoproto.E_UnsafeMarshalerAll, false),
 		vanity.SetBoolFileOption(gogoproto.E_UnsafeUnmarshalerAll, false),
-		vanity.SetBoolFileOption(gogoproto.E_VerboseEqualAll, true),
+		vanity.SetBoolFileOption(gogoproto.E_VerboseEqualAll, false),
 	} {
 		vanity.ForEachFile(files, opt)
 	}
