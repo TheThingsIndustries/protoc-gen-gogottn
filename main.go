@@ -22,7 +22,7 @@ func main() {
 		vanity.SetBoolFileOption(gogoproto.E_EnumdeclAll, true),
 		vanity.SetBoolFileOption(gogoproto.E_EqualAll, true),
 		vanity.SetBoolFileOption(gogoproto.E_FaceAll, false),
-		vanity.SetBoolFileOption(gogoproto.E_GogoprotoImport, false),
+		vanity.SetBoolFileOption(gogoproto.E_GogoprotoImport, true),
 		vanity.SetBoolFileOption(gogoproto.E_GoprotoEnumPrefixAll, true),
 		vanity.SetBoolFileOption(gogoproto.E_GoprotoEnumStringerAll, false),
 		vanity.SetBoolFileOption(gogoproto.E_GoprotoExtensionsMapAll, true),
