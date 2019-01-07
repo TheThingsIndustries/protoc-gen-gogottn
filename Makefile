@@ -3,8 +3,7 @@
 all: deps build
 
 deps: 
-	@command -v dep > /dev/null || go get github.com/golang/dep/cmd/dep
-	dep ensure
+	go mod vendor
 
 build:
 	go build .

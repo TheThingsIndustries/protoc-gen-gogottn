@@ -1,4 +1,11 @@
 language: go
 
+env:
+  global:
+    - GO111MODULE=on
+
+go:
+  - "1.11"
+
 script: 
     - make
