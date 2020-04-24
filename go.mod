@@ -1,5 +1,5 @@
-go 1.13
-
 module github.com/TheThingsIndustries/protoc-gen-gogottn
+
+go 1.14
 
 require github.com/gogo/protobuf v1.3.1
